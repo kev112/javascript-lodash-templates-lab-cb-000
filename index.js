@@ -17,3 +17,17 @@ function postComment() {
   //append rather than replace!
   commentsDiv.innerHTML += templateHTML;
 }
+
+function createPost() {
+  var postTitle = document.getElementById("postTitle").value;
+  var postAuthor = document.getElementById("postBody").value;
+  var postComment = document.getElementById("postAuthor").value;
+
+  
+  
+  var postTemplate = document.getElementById('post-template').innerHTML;
+  
+  var templateFn = _.template(postTemplate);
+
+  var templateHTML = templateFn({'postTitle' : postTitle, 'postAuthor' : postAuthor, 'postBody' : postBody});
+}
